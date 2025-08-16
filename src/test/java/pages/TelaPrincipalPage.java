@@ -7,8 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TelaPrincipalPage {
-    
-    WebDriver driver;
+
+    private WebDriver driver;
 
     public TelaPrincipalPage(WebDriver driver) {
         this.driver = driver;

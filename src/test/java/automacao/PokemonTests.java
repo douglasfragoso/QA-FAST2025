@@ -25,10 +25,11 @@ public class PokemonTests {
 
         TelaPrincipalPage telaPrincipalPage = new TelaPrincipalPage(driver);
         telaPrincipalPage.clickMelhoresAtacantesTipoNormal();
-    
+        String text = "Melhores Atacantes do tipo Normal em Pokémon GO";
+
         MelhoresAtacantesNormalPage melhoresAtacantesNormal = new MelhoresAtacantesNormalPage(driver);
-        String tituloPagina = melhoresAtacantesNormal.getTextTitle();
-        assertEquals("Melhores Atacantes do tipo Normal em Pokémon GO", tituloPagina);
+        melhoresAtacantesNormal.getTextTitle(text);
+        melhoresAtacantesNormal.printAllTableRows();
     }
 
     @Test
