@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import pages.MelhoresAtacantesNormalPage;
+import pages.PokemonStatus;
 import pages.TelaPrincipalPage;
 import utils.DriverFactory;
 
@@ -33,12 +34,12 @@ public class PokemonTests {
     }
 
     @Test
-    public void pesquisarPokemon() {
+    public void pesquisarPokemon() throws InterruptedException {
         TelaPrincipalPage telaPrincipalPage = new TelaPrincipalPage(driver);
         telaPrincipalPage.pesquisarPokemon("Pikachu");
-
-        assertEquals("Trovoada de Choques", telaPrincipalPage.obterPrimeiroMovimento());
-        assertEquals("Ataque Selvagem", telaPrincipalPage.obterSegundoMovimento());
+        PokemonStatus pokemonStatus = new PokemonStatus(driver);
+        assertEquals("Trovoada de Choques", pokemonStatus.obterPrimeiroMovimento());
+        assertEquals("Ataque Selvagem", pokemonStatus.obterSegundoMovimento());
     }
 
     // @After

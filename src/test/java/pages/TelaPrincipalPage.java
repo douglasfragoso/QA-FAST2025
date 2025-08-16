@@ -21,12 +21,6 @@ public class TelaPrincipalPage {
     @FindBy(css = "input[placeholder='Search...']")
     private WebElement inputSearchPokemon;
 
-    @FindBy(css = "li a[href='/pt/move/205']")
-    private WebElement textPrimeiroMovimento;
-
-    @FindBy(css = "li a[href='/pt/move/251']")
-    private WebElement textSegundoMovimento;
-
     public void clickMelhoresAtacantesTipoNormal() {
         buttonMelhoresAtacantesTipoNormal.click();
     }
@@ -34,14 +28,6 @@ public class TelaPrincipalPage {
     public void pesquisarPokemon(String nomePokemon) {
         inputSearchPokemon.sendKeys(nomePokemon);
         driver.findElement(By.partialLinkText(nomePokemon)).click();
-    }
-
-    public String obterPrimeiroMovimento() {
-        return textPrimeiroMovimento.getText();
-    }
-
-    public String obterSegundoMovimento() {
-        return textSegundoMovimento.getText();
     }
 
 }
