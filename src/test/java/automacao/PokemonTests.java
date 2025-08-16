@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
-import pages.MelhoresAtacantesNormal;
+import pages.MelhoresAtacantesNormalPage;
 import pages.TelaPrincipalPage;
 import utils.DriverFactory;
 
@@ -26,7 +26,7 @@ public class PokemonTests {
         TelaPrincipalPage telaPrincipalPage = new TelaPrincipalPage(driver);
         telaPrincipalPage.clickMelhoresAtacantesTipoNormal();
     
-        MelhoresAtacantesNormal melhoresAtacantesNormal = new MelhoresAtacantesNormal(driver);
+        MelhoresAtacantesNormalPage melhoresAtacantesNormal = new MelhoresAtacantesNormalPage(driver);
         String tituloPagina = melhoresAtacantesNormal.getTextTitle();
         assertEquals("Melhores Atacantes do tipo Normal em Pokémon GO", tituloPagina);
     }
