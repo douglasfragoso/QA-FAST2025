@@ -11,8 +11,6 @@ public class MelhoresAtacantesNormal {
         this.driver = driver;
     }
 
-    //Elements
-
     private By titlePage = By.cssSelector("header[style='background: var(--type-normal);']");
 
     public String getTextTitle() {

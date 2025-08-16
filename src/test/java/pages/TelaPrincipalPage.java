@@ -12,14 +12,25 @@ public class TelaPrincipalPage {
     }
 
     private By buttonMelhoresAtacantesTipoNormal = By.linkText("Melhores Atacantes do tipo Normal");
-    private By cardTitle = By.cssSelector("header[style='background: var(--type-normal);']");
+    private By inputSearchPokemon = By.cssSelector("input[placeholder='Search...']");
+    private By textPrimeiroMovimento = By.cssSelector("li a[href='/pt/move/205']");
+    private By textSegundoMovimento = By.cssSelector("li a[href='/pt/move/251']");
 
     public void clickMelhoresAtacantesTipoNormal() {
         driver.findElement(buttonMelhoresAtacantesTipoNormal).click();
     }
 
-    public String obterTituloPagina() {
-        return driver.findElement(cardTitle).getText();
-    } 
+    public void pesquisarPokemon(String nomePokemon) {
+        driver.findElement(inputSearchPokemon).sendKeys(nomePokemon);
+        driver.findElement(By.partialLinkText(nomePokemon)).click();
+    }
+
+    public String obterPrimeiroMovimento() {
+        return driver.findElement(textPrimeiroMovimento).getText();
+    }
+
+    public String obterSegundoMovimento() {
+        return driver.findElement(textSegundoMovimento).getText();
+    }
 
 }

@@ -2,7 +2,6 @@ package automacao;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
@@ -23,23 +22,26 @@ public class PokemonTests {
 
     @Test
     public void melhoresAtacantesTipoNormal() {
-        // Teste Automatizado
+
         TelaPrincipalPage telaPrincipalPage = new TelaPrincipalPage(driver);
         telaPrincipalPage.clickMelhoresAtacantesTipoNormal();
-        // Assert
+    
         MelhoresAtacantesNormal melhoresAtacantesNormal = new MelhoresAtacantesNormal(driver);
         String tituloPagina = melhoresAtacantesNormal.getTextTitle();
         assertEquals("Melhores Atacantes do tipo Normal em Pokémon GO", tituloPagina);
     }
 
     @Test
-    public void teste02() {
-        // Teste Automatizado
+    public void pesquisarPokemon() {
+        TelaPrincipalPage telaPrincipalPage = new TelaPrincipalPage(driver);
+        telaPrincipalPage.pesquisarPokemon("Pikachu");
+
+        assertEquals("Trovoada de Choques", telaPrincipalPage.obterPrimeiroMovimento());
+        assertEquals("Ataque Selvagem", telaPrincipalPage.obterSegundoMovimento());
     }
 
-    @After
-    public void close() {
-        // Fechar Tudo
-        driver.quit();
-    }
+    // @After
+    // public void close() {
+    //     driver.quit();
+    // }
 }
