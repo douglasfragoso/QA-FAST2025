@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "aedda07c-de6b-4697-be79-5d65028b1838",
 		"name": "FAST 2025",
+		"description": "https://serverest.dev",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26744197"
 	},
@@ -38,6 +39,110 @@
 					],
 					"path": [
 						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GETByDUsuários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuarios/0Gszpkz5pj0mvoPc",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"0Gszpkz5pj0mvoPc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETEByIDUsuários",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/usuarios/0Gszpkz5pj0mvoPc",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"0Gszpkz5pj0mvoPc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POSTUsuários",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Dougls Fragoso\",\r\n    \"email\": \"dougl5as@example.com\",\r\n    \"password\": \"Seguro123*\",\r\n    \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUTUsuários",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Dougls Fragoso\",\r\n    \"email\": \"dougflas@example.com\",\r\n    \"password\": \"Seguro123*\",\r\n    \"administrador\": \"true\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/usuarios/0Gszpkz5pj0mvoPc",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"usuarios",
+						"0Gszpkz5pj0mvoPc"
 					]
 				}
 			},
